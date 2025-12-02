@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Login</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<!-- CADASTRO -->
+<div class="div_cadastro" id="div_cadastrar">
+    <h2>Cadastro</h2>
+
+    <label class="label_login" for="nome">Nome Completo</label>
+    <input class="input_login" id="nome" type="text" placeholder="Digite seu nome completo">
+
+    <label class="label_login" for="cpf">CPF</label>
+    <input class="input_login" id="cpf" type="text" placeholder="Digite seu CPF">
+
+    <label class="label_login" for="senha">Senha</label>
+    <input class="input_login" id="senha" type="password" placeholder="Digite sua senha">
+
+    <label class="label_login" for="email">Email</label>
+    <input class="input_login" id="email" type="email" placeholder="Digite seu email">
+
+    <label class="label_login" for="data_nasc">Data de Nascimento</label>
+    <input class="input_login" id="data_nasc" type="date">
+
+    <label class="label_login" for="endereco">Endereço</label>
+    <input class="input_login" id="endereco" type="text" placeholder="Digite seu endereço">
+
+    <label class="label_login" for="telefone">Telefone</label>
+    <input class="input_login" id="telefone" type="text" placeholder="Digite seu telefone">
+
+    <!-- Envia os dados do formulário para o backend -->
+    <button id="cadastrarBtn">Cadastrar</button>
+
+    <!-- Troca a tela para a área de login-->
+    <p onclick="toggleTela('div_login', 'div_cadastrar')" class="trocar">Já tenho conta</p>
+</div>
+
+<!-- LOGIN -->
+<div class="div_login" id="div_login">
+    <h2>Login</h2>
+
+    <label class="label_login" for="login_email">Email</label>
+    <input class="input_login" id="login_email" type="email" placeholder="Digite seu email">
+
+    <label class="label_login" for="login_senha">Senha</label>
+    <input class="input_login" id="login_senha" type="password" placeholder="Digite sua senha">
+
+    <!-- Envia os dados de login para o backend -->
+    <button id="loginBtn">Entrar</button>
+
+    <!-- Troca a tela para a área de cadastro -->
+    <p onclick="toggleTela('div_cadastrar', 'div_login')" class="trocar">Criar uma conta</p>
+</div>
+
+<!-- Mensagem de retorno -->
+<div class="resultado_login"></div>
+
+<script>
+// Função para trocar entre as telas de Cadastro e Login
+function toggleTela(telaMostrar, telaOcultar) {
+    document.getElementById(telaOcultar).style.display = "none";
+    document.getElementById(telaMostrar).style.display = "block";
+}
+
+// Função para cadastro
+async function cadastrar() {
+    const dados = {
+        nome_completo_cadastro: document.getElementById("nome").value,
+        cpf_cadastro: document.getElementById("cpf").value,
+        senha_cadastro: document.getElementById("senha").value,
+        email_cadastro: document.getElementById("email").value,
+        data_nascimento_cadastro: document.getElementById("data_nasc").value,
+        endereco_cadastro: document.getElementById("endereco").value,
+        telefone_cadastro: document.getElementById("telefone").value
+    };
+
+    try {
+        const resposta = await fetch("http://localhost:3000/Cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        });
+
+        const result = await resposta.json();
+        document.querySelector(".resultado_login").textContent = result.resposta; // Exibe resposta na página
+
+    } catch (error) {
+        document.querySelector(".resultado_login").textContent = "Erro ao realizar a operação. Tente novamente mais tarde.";
+    }
+}
+
+// Função de login
+async function login() {
+    const dados = {
+        email_cadastro: document.getElementById("login_email").value,
+        senha_cadastro: document.getElementById("login_senha").value
+    };
+
+    try {
+        const resposta = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        });
+
+        const result = await resposta.json();
+
+        if (result.resposta === "valido") {
+            document.querySelector(".resultado_login").textContent = "Login realizado com sucesso!";
+        } else {
+            document.querySelector(".resultado_login").textContent = "E-mail ou senha incorretos.";
+        }
+    } catch (error) {
+        document.querySelector(".resultado_login").textContent = "Erro ao realizar login. Tente novamente mais tarde.";
+    }
+}
+
+// Associa os eventos aos botões
+document.getElementById("cadastrarBtn").addEventListener("click", cadastrar);
+document.getElementById("loginBtn").addEventListener("click", login);
+
+document.getElementById("div_login").style.display = "none";
+</script>
+
+</body>
+</html>

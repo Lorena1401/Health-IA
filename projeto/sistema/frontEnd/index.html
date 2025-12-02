@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health-IA</title>
+
+    <!-- CSS PRINCIPAL DO SITE -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS DO LOGIN -->
+    <link rel="stylesheet" href="style3.css" />
+
+    <!-- CSS DO CONTATO -->
+    <link rel="stylesheet" href="style2.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <img src="Health-IA (1).png" alt="logo">
+    </header>
+    
+    <!-- ===== MENU SUPERIOR ===== -->
+    <div class="fundo_btn">
+        <button class="btn branco" data-tela="home">Home</button>
+        <button class="btn branco" data-tela="login">Login</button>
+        <button class="btn branco" data-tela="contato">Contato</button>
+        <button class="btn branco" id="btn_trabalhe" data-tela="trabalhe" style="display:none;"> Trabalhe </button>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ======================== TELAS =========================== -->
+    <!-- ========================================================= -->
+
+    <!-- ===== HOME ===== -->
+    <div class="tela" id="tela_home">
+        <div class="div_home">
+            <h1 class="divh1">Revolucionando a Saúde com Inteligência Artificial</h1>
+            <p class="homeFundo">Soluções inovadoras para diagnósticos precisos e tratamentos personalizados</p>
+
+            <div class="solucao">
+                <h2 class="titulo_solu">Soluções</h2>
+                <ul class="lista-solucoes">
+                    <li>Diagnóstico Assistido por IA</li>
+                    <li>Personalização de tratamentos</li>
+                    <li>Monitoramento Remoto de pacientes</li>
+                    <li>Análise Preditiva para prevenção de doenças</li>
+                </ul>
+            </div>
+
+            <div class="benef">
+                <h2 class="titulo_Bene">Benefícios para você</h2>
+                <ul class="lista-beneficios">
+                    <li>Aumento da precisão diagnóstica</li>
+                    <li>Redução de erros médicos</li>
+                    <li>Tratamentos adaptados ao perfil do paciente</li>
+                    <li>Melhoria na qualidade de vida</li>
+                </ul>
+            </div>
+
+            <div class="caso-de-uso">
+                <p class="pSoluções">
+                    "Como a IA ajudou a detectar precocemente o câncer de mama em um hospital parceiro."
+                </p>
+            </div>
+
+            <button class="btn2" data-tela="login">Ir para Login</button>
+        </div>
+    </div>
+
+    <!-- ===== LOGIN (importado do login.html) ===== -->
+    <div class="tela" id="tela_login">
+        <div class="div_login" id="div_login"> <!-- Adicionado id="div_login" para consistência -->
+            <h2>Login</h2>
+
+            <label class="label_login" for="Email">Email</label>
+            <input class="input_login" id="Email" type="email" placeholder="Digite seu email">
+
+            <label class="label_login" for="Senha">Senha</label>
+            <input class="input_login" id="Senha" type="password" placeholder="Digite sua senha">
+
+            <button id="loginBtn">Entrar</button>
+
+            <div class="resultado_login"></div>
+
+            <p onclick="alternarCadastro(true)" class="trocar">Criar uma conta</p>
+        </div>
+
+        <div class="pagina_cadastro">
+            <div class="div_cadastro subirCadastro cadastroBox" id="area_cadastro">
+                <h2>Cadastro</h2>
+                <label class="label_login" for="nome">Nome Completo</label>
+                <input class="input_login" id="nome" type="text">
+
+                <label class="label_login" for="cpf">CPF</label>
+                <input class="input_login" id="cpf" type="text">
+
+                <label class="label_login" for="senha">Senha</label>
+                <input class="input_login" id="senha" type="password">
+
+                <label class="label_login" for="email">Email</label>
+                <input class="input_login" id="email" type="email">
+
+                <label class="label_login" for="data_nasc">Data de Nascimento</label>
+                <input class="input_login" id="data_nasc" type="date">
+
+                <label class="label_login" for="endereco">Endereço</label>
+                <input class="input_login" id="endereco" type="text">
+
+                <label class="label_login" for="telefone">Telefone</label>
+                <input class="input_login" id="telefone" type="text">
+
+                <button id="cadastrarBtn" type="button">Cadastrar</button>
+
+                <p onclick="alternarCadastro(false)" class="trocar">Já tenho conta</p>
+                <div class="resultado_login"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== CONTATO (importado do contato.html) ===== -->
+    <div class="tela" id="tela_contato">
+        <div class="pagina_contato">
+            <div class="div_contato">
+                <h1 class="titulo_formulario">Formulário</h1>
+
+                <form id="formFaleConosco" class="formulario">
+                    <label class="contato_label">Nome:</label>
+                    <input class="input_contato" id="Nome_contato" type="text">
+
+                    <label class="contato_label">E-mail:</label>
+                    <input class="input_contato" id="Email_contato" type="email">
+
+                    <label class="contato_label">Telefone:</label>
+                    <input class="input_contato" id="Telefone_contato" type="text">
+
+                    <label class="contato_label">Assunto:</label>
+                    <input class="input_contato" id="Assunto_contato" type="text">
+
+                    <label class="contato_label">Mensagem:</label>
+                    <textarea id="Mensagem_contato" rows="5"></textarea>
+
+                    <button id="btn_enviar_fomulario" class="btn_enviar_fomulario" type="button">Enviar</button>
+                </form>
+
+                <div id="resultado_formulario" class="resultado_formulario"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TRABALHE CONOSCO ===== -->
+    <div class="tela" id="tela_trabalhe">
+        <div class="div_trabalhe" style="margin-top: 80px;">
+            <h2>Vagas Abertas</h2>
+
+            <div class="vagas-container">
+                <div class="vaga">
+                    <h3>Cientista de Dados em Saúde</h3>
+                    <p><strong>Requisitos:</strong></p>
+                    <ul>
+                        <li>Experiência em machine learning</li>
+                        <li>Conhecimento em dados clínicos</li>
+                        <li>Paixão por inovação</li> <br>
+                    </ul>
+                    <button class="btn" id="btn_candidato">Candidate-se</button>
+                </div>
+
+                <div class="vaga">
+                    <h3>Engenheiro de Software</h3>
+                    <p><strong>Requisitos:</strong></p>
+                    <ul>
+                        <li>Desenvolvimento de sistemas seguros e escaláveis</li>
+                        <li>Experiência com APIs de saúde</li> <br>
+                    </ul>
+                    <button class="btn" id="btn_candidato2">Candidate-se</button>
+                </div>
+            </div>
+
+            <div class="vaga ultima">
+                <h3>Não encontrou sua vaga?</h3>
+                <p class="frase_envie_curriculo">Envie seu currículo e conte como você pode contribuir!</p>
+                <button class="btn" type="button" id="btn_curiculo">Enviar Currículo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ===================== SCRIPT GERAL ======================= -->
+    <!-- ========================================================= -->
+    <script>
+        // Esconde todas as telas
+        function ocultarTelas() {
+            document.querySelectorAll(".tela").forEach(t => t.style.display = "none");
+        }
+
+        // Mostra a tela escolhida
+        function mostrar(tela) {
+            ocultarTelas();
+            document.getElementById("tela_" + tela).style.display = "block";
+        }
+
+        // Eventos da barra superior
+        document.querySelectorAll("[data-tela]").forEach(btn => {
+            btn.addEventListener("click", () => mostrar(btn.dataset.tela));
+        });
+
+        // Inicia na home
+        mostrar("home");
+
+        // Alternar entre login e cadastro
+        function alternarCadastro(mostrarCadastro) {
+            document.getElementById("area_cadastro").style.display = mostrarCadastro ? "block" : "none";
+            document.querySelector("#tela_login .div_login").style.display = mostrarCadastro ? "none" : "block";
+        }
+
+        alternarCadastro(false); // começa com login aberto
+
+
+        document.getElementById("btn_candidato").addEventListener("click", async () => {
+            alert("Enviado")
+        })
+
+        document.getElementById("btn_candidato2").addEventListener("click", async () => {
+            alert("Enviado")
+        })
+
+        document.getElementById("btn_curiculo").addEventListener("click", async () => {
+            alert("Curriculo enviado")
+        })
+
+
+
+
+
+        // ===== Cadastro =====
+        document.getElementById("cadastrarBtn").addEventListener("click", async () => {
+            // Declare os elementos DOM
+            const nome = document.getElementById('nome');
+            const cpf = document.getElementById('cpf');
+            const senha = document.getElementById('senha');
+            const email = document.getElementById('email');
+            const data_nasc = document.getElementById('data_nasc');
+            const endereco = document.getElementById('endereco');
+            const telefone = document.getElementById('telefone');
+            const resultado_login = document.querySelector('#area_cadastro .resultado_login');  // Corrigido: especifica a div do cadastro
+
+            // Validação básica
+            if (!nome.value || !email.value || !senha.value) {
+                resultado_login.textContent = 'Preencha pelo menos Nome, Email e Senha.';
+                return;
+            }
+
+            const dados = {
+                nome_completo_cadastro: nome.value,
+                cpf_cadastro: cpf.value,
+                senha_cadastro: senha.value,
+                email_cadastro: email.value,
+                data_nascimento_cadastro: data_nasc.value,
+                endereco_cadastro: endereco.value,
+                telefone_cadastro: telefone.value
+            };
+
+            try {
+                const resposta = await fetch("http://localhost:3000/Cadastrar", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dados)
+                });
+
+                if (!resposta.ok) {
+                    throw new Error(`Erro HTTP: ${resposta.status}`);
+                }
+
+                const result = await resposta.json();
+                console.log('Resposta cadastro:', result);
+                resultado_login.textContent = result.resposta || 'Cadastro realizado!';
+            } catch (error) {
+                console.error('Erro cadastro:', error);
+                resultado_login.textContent = "Erro ao cadastrar: " + error.message;
+            }
+        });
+
+        // ===== Login =====
+        document.getElementById("loginBtn").addEventListener("click", async () => {
+            // Declare os elementos DOM
+            const login_email = document.getElementById('Email');
+            const login_senha = document.getElementById('Senha');
+            const resultado_login = document.querySelector('.resultado_login');  // Mantido: pega a primeira (do login)
+            const btn_trabalhe = document.getElementById('btn_trabalhe');
+
+            // Validação básica
+            if (!login_email.value || !login_senha.value) {
+                resultado_login.textContent = 'Preencha Email e Senha.';
+                return;
+            }
+
+            const dados = {
+                email_cadastro: login_email.value,
+                senha_cadastro: login_senha.value
+            };
+
+            try {
+                const resposta = await fetch("http://localhost:3000/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dados)
+                });
+
+                if (!resposta.ok) {
+                    throw new Error(`Erro HTTP: ${resposta.status}`);
+                }
+
+                const result = await resposta.json();
+                console.log('Resposta login:', result);
+
+                if (result.resposta === "valido") {
+                    resultado_login.textContent = "Login realizado!";
+                    btn_trabalhe.style.display = "inline-block";
+                } else {
+                    resultado_login.textContent = "Email ou senha incorretos";
+                }
+            } catch (error) {
+                console.error('Erro login:', error);
+                resultado_login.textContent = "Erro ao logar: " + error.message;
+            }
+        });
+
+        // CONTATO
+        document.getElementById("btn_enviar_fomulario").addEventListener("click", async (e) => {
+            e.preventDefault(); // impede recarregar a página
+
+            const Nome = document.getElementById("Nome_contato").value
+            const Email = document.getElementById("Email_contato").value
+            const Telefone = document.getElementById("Telefone_contato").value
+            const Assunto = document.getElementById("Assunto_contato").value
+            const Mensagem = document.getElementById("Mensagem_contato").value
+
+            try {
+                const resposta = await fetch(`http://localhost:3000/FaleConosco`, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ Nome, Email, Telefone, Assunto, Mensagem })
+                })
+
+                const dados = await resposta.json()
+                document.getElementById("resultado_formulario").innerText = dados.resposta
+
+            } catch (erro) {
+                console.error("Erro ao chamar backend:", erro)
+                document.getElementById("resultado_formulario").innerText = "Erro ao conectar ao servidor"
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

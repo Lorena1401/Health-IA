@@ -1,0 +1,478 @@
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para a logo */
+/* Estilo para a logo */
+/* Estilo para a logo */
+.logo {
+    position: absolute; /* Posiciona a logo em relação ao seu contêiner pai */
+    top: 10px; /* Distância do topo */
+    left: 750px; /* Distância da esquerda para deixar mais espaço à esquerda */
+    width: 50px; /* Tamanho da logo ajustado */
+    height: 50px; /* Tamanho da logo ajustado */
+    border-radius: 50%; /* Deixa a logo redonda */
+    overflow: hidden; /* Garante que a imagem se ajuste dentro do círculo */
+    z-index: 1000; /* Garante que a logo fique sobre outros elementos */
+}
+
+.logo img {
+    width: 100%; /* A imagem vai ocupar 100% do espaço da div .logo */
+    height: 100%; /* A imagem vai ocupar 100% do espaço da div .logo */
+    object-fit: contain; /* Garante que a imagem se ajuste dentro do círculo sem ser cortada */
+}
+
+/* Alinha os botões ao lado da logo */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 70px; /* Espaço após a logo, para os botões não ficarem grudados */
+}
+
+
+body {
+    background:
+      linear-gradient(rgba(230, 96, 186, 0.7), rgba(245, 128, 196, 0.7)),
+      url('https://wallpapers.com/images/hd/hospital-background-8uzvaaj1wielv1ca.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    overflow: hidden; /* SEM SCROLL */
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+}
+
+/* =========================================================
+   MENU SUPERIOR FIXO
+========================================================= */
+.fundo_btn {
+    position: fixed;
+    top: 3px; /* COLADO NO TOPO */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+
+    background-color: rgba(245, 175, 233, 0.857);
+    border: 2px solid #e9447b;
+    padding: 8px 12px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    padding: 6px 20px;
+    font-size: 13px;
+    background: #e63c75;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+    top:0px;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* =========================================================
+   TELAS — SEM SCROLL E DESGRUDADAS DO MENU
+========================================================= */
+.tela {
+    position: absolute;
+    top: 7%; /*  ESPAÇO PERFEITO ENTRE MENU E CONTEÚDO */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 92%;
+    max-width: 750px;
+    height: 84vh; /* Ajustado para CABER SEM SCROLL */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    display: none;
+}
+
+/* =========================================================
+   CONTAINERS INTERNOS — AGORA CENTRALIZADOS
+========================================================= */
+.div_home,
+.div_login,
+.div_cadastro,
+.div_trabalhe {
+    background-color: #F8BBD0;
+    border: 2px solid #e91e98;
+    border-radius: 15px;
+
+    padding: 8px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.subirCadastro {
+    position: relative !important;
+    top: -20px !important;      /* sobe a div */
+}
+
+.cadastroBox {
+    max-width: 450px;   /* diminui a largura */
+    margin: 0 auto;     /* centraliza */
+    padding: 20px;      /* espaço interno */
+    border-radius: 12px;
+    background: #fff;   /* caso seu fundo seja colorido */
+}
+
+/* =========================================================
+   PAGINA DE CADASTRO
+========================================================= */
+.pagina_cadastro {
+    display: flex;
+    justify-content: center;      /* centraliza horizontal */
+    align-items: flex-start;      /* conteúdo começa mais para cima */
+    min-height: 100vh;            /* ocupa toda altura da tela */
+    padding-top: 5px;            /* distância do menu superior */
+    padding-bottom: 100px;        /* evita encostar na div_fundobtn */
+}
+
+.div_cadastro {
+    max-width: 400px;             /* largura maior que antes */
+    width: 50%;                   /* responsivo */
+    background-color: #fff;       /* fundo neutro */
+    padding: 20px;                /* espaçamento interno */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                    /* espaço entre inputs */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.div_cadastro .input_login,
+.div_cadastro input,
+.div_cadastro select,
+.div_cadastro textarea {
+    width: 90%;                  /* esticam até o limite da div */
+    max-width: 100%;
+    box-sizing: border-box;       /* inclui borda no cálculo */
+    padding: 10px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    border: 2px solid #e91e63;
+    text-align: center;
+}
+
+input{
+    width: 100%;                  /* esticam até o limite da div */
+    max-width: 100%;
+    box-sizing: border-box;       /* inclui borda no cálculo */
+    padding: 10px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    text-align: center;
+}
+
+.div_cadastro .btn_enviar_fomulario {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #E91E63, #fcb3f8);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.div_cadastro .btn_enviar_fomulario:hover {
+    background-color: #fb5095;
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   PAGINA DE CONTATO
+========================================================= */
+.div_contato{
+    max-width: 400px;
+    padding: 8px;
+    width: auto;
+    height: auto;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.pagina_contato {
+    display: flex;
+    justify-content: center;     /* Centraliza horizontalmente */
+    align-items: flex-start;     /* Joga o conteúdo mais para cima */
+    min-height: 100vh;           /* Ocupa a tela toda */
+    padding-top: 40px;           /* Ajuste fino da distância do topo */
+    padding-bottom: 100px;       /* Evita encostar na div_fundobtn */
+}
+
+.pagina_contato .input_contato,
+.pagina_contato select,
+.pagina_contato textarea {
+    width: 100%;           /* Estica até o limite da div_contato */
+    max-width: 100%;       /* Garante que não passe do container */
+    box-sizing: border-box;/* Inclui borda no cálculo da largura */
+}
+
+/* =========================================================
+   HOME
+========================================================= */
+.div_home {
+    gap: 8px;
+}
+
+.divh1 {
+    color: #E22466;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.homeFundo {
+    background-color: #f44fb2;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.solucao, .benef {
+    width: 85%;
+    padding: 8px;
+    border-radius: 10px;
+    background: white;
+    color: #f948b2;
+    font-size: 0.85rem;
+}
+
+.lista-solucoes,
+.lista-beneficios {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.caso-de-uso {
+    font-size: 0.8rem;
+    padding: 3px;
+}
+
+.btn2 {
+    padding: 5px 5px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    background: #E91E63;
+    color: #fff;
+}
+
+/* =========================================================
+   LOGIN / CADASTRO
+========================================================= */
+.div_login {
+    max-width: 350px;
+}
+
+.label_login {
+    color: #E91E63;
+    font-weight: bold;
+    font-size: 0.9rem;
+    align-self: flex-start;
+}
+
+.input_login {
+    width: 100%;
+    padding: 6px;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* =========================================================
+   TRABALHE CONOSCO — ESTILO DA IMAGEM
+========================================================= */
+
+.div_trabalhe {
+    background: rgb(252, 159, 210); /* rosa claro translúcido */
+    border: 4px solid #f3a3e0;             /* borda grossa */
+    border-radius: 25px;
+    padding: 25px;
+    width: 95%;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(4px);            /* efeito vidro */
+}
+
+.div_trabalhe h2 {
+    background: #ff77a4;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 10px 25px;
+    border-radius: 18px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* ---------------------- CONTAINER DAS VAGAS ---------------------- */
+
+.vagas-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* ---------------------- CARTÕES DAS VAGAS ---------------------- */
+
+.vaga {
+    background: rgb(246, 246, 246);
+    border: 3px solid #ff0059;
+    border-radius: 20px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+}
+
+.vaga h3 {
+    background: #f477b6;
+    color: white;
+    padding: 8px 0;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.vaga p {
+    font-size: 0.8rem;
+    color: #050505;
+}
+
+.vaga ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 15px;
+}
+
+.vaga ul li {
+    margin: 4px 0;
+    font-size: 0.75rem;
+    color: #2c2b2b;
+}
+
+/* ---------------------- BOTÕES ---------------------- */
+
+.vaga button,
+.ultima button {
+    background: #E91E63;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.vaga button:hover,
+.ultima button:hover {
+    background: #fd6497;
+}
+
+/* ---------------------- ÚLTIMA CAIXA ---------------------- */
+
+.ultima {
+    margin-top: 20px;
+    background: rgba(255, 232, 242, 0.9);
+    border: 3px solid hsl(339, 100%, 52%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.frase_envie_curriculo {
+    color: #E91E63;
+    font-size: 0.85rem;
+    margin: 10px 0 15px;
+}
+
+
+/* ===== CENTRALIZAR AS RESPOSTAS DO SISTEMA ===== */
+.resultado_login,
+.resultado_formulario {
+    width: 100%;
+    text-align: center;        /* Texto centralizado */
+    margin-top: 10px;
+    font-weight: bold;
+    color: #E91E63;            /* Mesma cor da identidade visual */
+    font-size: 0.9rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================================
+   OCULTAR
+========================================================= */
+.ocultar {
+    display: none !important;
+}
+
+/* =========================================================
+   MEDIA QUERY — telas 1024px
+========================================================= */
+@media (max-width: 1024px) {
+    .tela {
+        width: 95%;
+        max-width: 650px;
+        height: 86vh; /* Ajustado */
+        top: 8%; /* Aproximado sem colar */
+    }
+
+    .fundo_btn {
+        top: 0;
+        padding: 6px 10px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

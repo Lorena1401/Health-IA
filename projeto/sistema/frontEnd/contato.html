@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="div_contato">
+        <h1 class="titulo_formulario">Formulário</h1>
+
+        <form id="formFaleConosco" class="formulario">
+            <label class="contato_label" for="Nome">Nome:</label>
+            <input class="input_contato" type="text" id="Nome" placeholder="Digite seu nome">
+
+            <label class="contato_label" for="Email">E-mail :</label>
+            <input class="input_contato" type="email" id="Email" placeholder="Digite seu e-mail">
+
+            <label  class="contato_label" for="Telefone">Telefone :</label>
+            <input class="input_contato" type="text" id="Telefone" placeholder="Digite seu telefone">
+
+            <label class="contato_label" for="Assunto">Assunto:</label>
+            <input class="input_contato" type="text" id="Assunto" placeholder="Digite o assunto">
+
+            <label class="contato_label" for="Mensagem">Mensagem:</label>
+            <textarea id="Mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+
+            <button id="btn_enviar_fomulario" class="btn_enviar_fomulario">Enviar</button>
+        </form>
+
+        <!-- AGORA O RESULTADO EXISTE -->
+        <div id="resultado_formulario" class="resultado_formulario"></div>
+    </div>
+
+</body>
+<script>
+    document.getElementById("btn_enviar_fomulario").addEventListener("click", async (e) => {
+        e.preventDefault(); // impede recarregar a página
+
+        const Nome = document.getElementById("Nome").value
+        const Email = document.getElementById("Email").value
+        const Telefone = document.getElementById("Telefone").value
+        const Assunto = document.getElementById("Assunto").value
+        const Mensagem = document.getElementById("Mensagem").value
+
+        try {
+            const resposta = await fetch(`http://localhost:3000/FaleConosco`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ Nome, Email, Telefone, Assunto, Mensagem })
+            })
+
+            const dados = await resposta.json()
+            document.getElementById("resultado_formulario").innerText = dados.resposta
+
+        } catch (erro) {
+            console.error("Erro ao chamar backend:", erro)
+            document.getElementById("resultado_formulario").innerText = "Erro ao conectar ao servidor"
+        }
+    }) 
+</script>
+</html>

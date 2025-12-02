@@ -1,0 +1,129 @@
+
+/* ===== CARTÕES DE CADASTRO E LOGIN ===== */
+.div_cadastro, .div_login {
+    background: #fba5c3;
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+
+
+/* ===== TÍTULO ===== */
+h2 {
+    background-color: #ea467d;
+    color: #fff;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 22px;
+    border-radius: 40px;
+    border: 3px solid #fff;
+    width: fit-content;
+    margin: -15px auto 30px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== LABELS ===== */
+.label_login {
+    font-weight: 600;
+    color: #ff4c87;
+    font-size: 15px;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ===== INPUTS ===== */
+.input_login {
+    background-color: #ffe6f0;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+    color: #e91e63;
+    outline: none;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.input_login:focus {
+    border-color: #e91e63;
+    box-shadow: 0 0 6px rgba(241, 89, 140, 0.934);
+    background-color: #fdf1f5;
+}
+
+/* ===== BOTÃO ===== */
+button {
+    background: linear-gradient(135deg, #E91E63, #fcb3f8);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+/* ===== LINK PARA TROCAR TELA ===== */
+.trocar {
+    margin-top: 15px;
+    color: #7a1a4f;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.trocar:hover {
+    color: #ff5b92;
+}
+
+/* Mensagem de retorno */
+.resultado_login {
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 25px;
+    color: #e91e63;
+}
+
+/* ===== MELHORIAS DE RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    .container_cadastro, .container_login {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+.div_cadastrar {
+    display: none; /* Esconde a tela de cadastro ao carregar a página */
+}
+
+.div_login {
+    display: block; /* Exibe a tela de login */
+}
+
+.ocultar {
+    display: none;
+}

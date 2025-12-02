@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontal */
+    align-items: center;     /* Centraliza vertical */
+    height: 100vh;           /* Ocupa a tela toda */
+    margin: 0;
+}
+.div_contato {
+    background: rgba(255, 192, 203, 0.6); /* Fundo rosa translúcido */
+    padding: 40px;                        /* Espaçamento interno */
+    border-radius: 40px;                  /* Cantos arredondados */
+    width: 90%;                           /* Largura proporcional */
+    max-width: 600px;                     /* Largura máxima */
+    border: 5px solid rgb(233, 30, 98); /* Borda rosa suave */
+    box-shadow: 0 0 20px rgba(233, 30, 98, 0.697); /* Brilho rosado */
+}
+
+.titulo_formulario {
+    background-color: #ff5b92;            /* Fundo rosa principal */
+    color: #fff;                          /* Texto branco */
+    text-align: left;                     /* Alinhado à esquerda */
+    padding: 8px 20px;                    /* Espaçamento interno */
+    font-size: 22px;                      /* Tamanho da fonte */
+    font-weight: 700;                     /* Negrito */
+    border-radius: 40px;                  /* Cantos arredondados */
+    border: 3px solid #ff006f;               /* Borda branca */
+    width: fit-content;                   /* Largura ajusta ao texto */
+    margin: -20px auto 30px auto;         /* Centraliza horizontalmente e dá espaço abaixo */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);/* Sombra discreta */
+}
+
+.formulario {
+    display: flex;                        /* Flexbox para organizar os campos */
+    flex-direction: column;               /* Coloca um campo abaixo do outro */
+    gap: 15px;                            /* Espaço entre os campos */
+    text-align: left;                     /* Alinha texto dos labels à esquerda */
+}
+
+.contato_label{
+    font-weight: 600;                     /* Deixa em negrito */
+    color: #ff3075;                       /* Rosa */
+    font-size: 15px;                      /* Tamanho da fonte */
+}
+
+.input_contato, select, textarea {
+    background-color: #ffe6f0;            /* Fundo rosa clarinho */
+    border: 2px solid #fff;               /* Borda branca */
+    border-radius: 10px;                  /* Bordas arredondadas */
+    padding: 10px;                        /* Espaçamento interno */
+    font-size: 15px;                      /* Tamanho do texto */
+    color: #e91e63;                       /* Texto rosa */
+    outline: none;                        /* Remove contorno padrão */
+    transition: 0.3s;                     /* Transição suave para hover/focus */
+}
+
+.input_contato:focus, select:focus, textarea:focus {
+    border-color: #e91e63;                /* Borda rosa forte */
+    box-shadow: 0 0 6px rgba(240, 38, 105, 0.73); /* Efeito de brilho */
+}
+
+.btn_enviar_fomulario {
+    background: linear-gradient(135deg, #E91E63, #fcb3f8); /* Degradê rosa */
+    color: #fff;                          /* Texto branco */
+    border: none;                         /* Remove borda */
+    padding: 12px 18px;                   /* Espaçamento */
+    font-size: 16px;                      /* Tamanho da fonte */
+    font-weight: bold;                    /* Negrito */
+    border-radius: 12px;                  /* Cantos arredondados */
+    margin-top: 15px;                     /* Espaço acima */
+    cursor: pointer;                      /* Mãozinha ao passar o mouse */
+    transition: 0.3s;                     /* Animação suave */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);/* Sombra leve */
+}
+
+/* ===== EFEITO AO PASSAR O MOUSE NO BOTÃO ===== */
+.btn_enviar_fomulario:hover {
+    background-color: #e91e6fea;            /* Rosa mais escuro */
+    transform: scale(1.05);               /* Leve aumento */
+}
+
+.resultado_formulario{
+    margin-top: 10px; 
+    font-weight: bold;
+    min-height: 25px;
+}
